@@ -1,12 +1,12 @@
 'use strict';
 var fs = require('fs');
-var directions = fs.readFileSync('./input.txt');
+var directions = fs.readFileSync('./input.txt', 'utf8');
 var houseCount = 1; //for spot he's at
 var houseMap = {};
-var location = {x:0,y:0}
+var location = {x:0,y:0};
 var hash;
 for (var iter = 0; iter < directions.length; ++iter) {
-  switch(dir) {
+  switch(directions[iter]) {
     case '>':
       location.x++;
       break;
@@ -26,4 +26,4 @@ for (var iter = 0; iter < directions.length; ++iter) {
     houseCount++;
   }
 }
-return houseCount;
+console.log(houseCount);
